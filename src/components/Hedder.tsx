@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { ModeToggle } from "./theme/ModeToggle";
 
 const Hedder: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
 
   const NavLink: React.FC<{ href: string; children: React.ReactNode }> = ({
     href,
@@ -16,18 +14,14 @@ const Hedder: React.FC = () => {
   }) => (
     <Link
       href={href}
-      className={`px-2 py-1 rounded-md text-sm font-medium transition-colors ${
-        pathname === href
-          ? "text-blue-600 dark:text-blue-400"
-          : "text-slate-700 dark:text-slate-200 hover:text-blue-600"
-      }`}
+      className={`px-2 py-1 rounded-md text-sm font-medium transition-colors  `}
     >
       {children}
     </Link>
   );
 
   return (
-    <header className="  w-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md shadow-sm transition-colors">
+    <header className=" sticky top-0 z-100 caret-transparent  w-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md shadow-sm transition-colors ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">

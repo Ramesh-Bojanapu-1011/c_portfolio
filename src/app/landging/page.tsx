@@ -165,9 +165,8 @@ const page = () => {
 
   return (
     <>
-      <Hedder />
-
-      <main className=" caret-transparent max-w-svw overflow-hidden">
+      <main className=" caret-transparent  ">
+        <Hedder />
         {/* Video hero section: place a video file at public/hero.mp4. poster falls back to /hero.svg */}
         <section
           id="home"
