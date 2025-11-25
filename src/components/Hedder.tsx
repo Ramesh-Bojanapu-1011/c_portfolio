@@ -73,6 +73,7 @@ const Hedder: React.FC = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
+            <ModeToggle />
             <button
               onClick={() => setOpen((s) => !s)}
               aria-expanded={open}
@@ -110,20 +111,11 @@ const Hedder: React.FC = () => {
       {/* Mobile menu panel */}
       {open && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-slate-900/80 backdrop-blur-md">
+          <div className="px-2 flex flex-col items-start   pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-slate-900/80 backdrop-blur-md">
             <NavLink href="#home">Home</NavLink>
             <NavLink href="#about">About</NavLink>
             <NavLink href="#services">Services</NavLink>
             <NavLink href="#contact">Contact</NavLink>
-            <div className="flex  ">
-              <Link
-                href="#contact"
-                className="block mt-2 rounded-full bg-linear-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 text-center font-semibold shadow-md"
-              >
-                Get in touch
-              </Link>
-              <ModeToggle />
-            </div>
           </div>
         </div>
       )}
