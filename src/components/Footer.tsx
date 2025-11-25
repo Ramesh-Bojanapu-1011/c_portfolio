@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -6,7 +8,13 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="text-2xl font-extrabold text-yellow-400">
+            <div className="text-2xl flex  gap-2 items-center font-extrabold text-yellow-400">
+              <Image
+                src="/logo.png"
+                alt="Enkonix Logo"
+                width={40}
+                height={40}
+              />
               ENKONIX
             </div>
             <p className="mt-3 text-sm text-slate-300 max-w-xs">

@@ -27,7 +27,7 @@ const Hedder: React.FC = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md shadow-sm transition-colors">
+    <header className="  w-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md shadow-sm transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">

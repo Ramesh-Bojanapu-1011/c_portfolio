@@ -37,7 +37,7 @@ const Counter: React.FC<{
           }
         });
       },
-      { threshold: 0.4 },
+      { threshold: 0.4 }
     );
 
     obs.observe(node);
@@ -157,7 +157,10 @@ const page = () => {
 
           <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
 
-          <div className="relative z-10 max-w-5xl px-6 py-24 text-center text-white">
+          <div
+            data-aos="fade-up"
+            className="relative z-10 max-w-5xl px-6 py-24 text-center text-white"
+          >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-yellow-400 tracking-tight">
               WELCOME TO
               <br />
@@ -181,7 +184,7 @@ const page = () => {
         </section>
 
         {/* Mission / Vision / Values - glass cards using theme colors */}
-        <section className="py-16 bg-slate-900/80 dark:bg-slate-950 text-white">
+        <section className="py-16 dark:bg-stone-950/90 bg-black/90 shadow-2xl shadow-blue-50 transition-colors text-white">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h3 className="text-3xl font-extrabold text-yellow-400">
               Mission, Vision & Values
@@ -191,51 +194,59 @@ const page = () => {
               core principles.
             </p>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mvvs.map((m, i) => (
-                <article
-                  key={m.key}
-                  data-aos="fade-up"
-                  data-aos-delay={i * 100}
-                  className="relative rounded-3xl p-8 bg-white/4 dark:bg-white/6 border border-transparent hover:border-cyan-400/20 hover:shadow-[0_20px_40px_rgba(6,95,70,0.18)] transition-transform transform hover:-translate-y-2 backdrop-blur-md text-left shadow-lg"
-                >
-                  <div className="flex items-start gap-5">
-                    <div className="shrink-0">
-                      <img
-                        src={`/${m.icon}`}
-                        alt={m.title}
-                        className=" size-30 object-contain"
-                      />
+            <div className="mt-8 relative">
+              <div className="hidden md:block absolute left-1/2 top-6 bottom-6 w-px bg-yellow-400 transform -translate-x-1/2" />
+
+              <div className="space-y-10">
+                {mvvs.map((m, i) => (
+                  <div
+                    key={m.key}
+                    data-aos="fade-up"
+                    data-aos-delay={i * 120}
+                    className={`relative  md:flex md:items-center md:justify-between  ${
+                      i % 2 != 0 ? " md:flex-row-reverse " : ""
+                    }`}
+                  >
+                    <div className="md:w-5/12 md:px-6">
+                      <div className="rounded-3xl p-6 bg-white/4 dark:bg-white/6 border border-transparent hover:border-cyan-400/20 shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 backdrop-blur-md">
+                        <h4 className="text-xl font-semibold text-white">
+                          {m.title}
+                        </h4>
+                        <p className="mt-3 text-sm text-slate-200 leading-relaxed">
+                          {m.desc}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="flex-1">
-                      <h4 className="text-xl font-semibold text-white">
-                        {m.title}
-                      </h4>
-                      <p className="mt-3 text-sm text-slate-200 leading-relaxed">
-                        {m.desc}
-                      </p>
-
-                      <div className="mt-4">
-                        <a className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-cyan-400 to-indigo-600 text-slate-900 font-semibold shadow-sm">
-                          Read More
-                        </a>
+                    <div
+                      className={`absolute  ${
+                        i % 2 != 0 ? "  left-[48%] " : " right-[48%]"
+                      }   `}
+                    >
+                      <div className="flex items-center justify-center w-full">
+                        <div className="w-14 h-14 rounded-full bg-linear-to-br from-yellow-400 to-orange-400   flex items-center justify-center text-slate-900 font-bold shadow-lg ring-4 ring-white/5">
+                          <img
+                            src={`/${m.icon}`}
+                            alt={m.title}
+                            className="w-7 h-7 object-contain"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </article>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Trusted partners marquee */}
-        <section className="py-16 bg-linear-to-br from-blue-600 to-indigo-700 dark:from-slate-800 dark:to-slate-900 transition-colors">
+        <section className="py-16 dark:bg-stone-950/90 bg-black/90  shadow-2xl shadow-blue-50 transition-colors">
           <div className="  mx-auto px-6 text-center">
-            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">
+            <h3 className="text-3xl font-bold text-yellow-400 dark:text-white">
               Trusted payroll and HR Services
             </h3>
-            <p className="mt-3 dark:text-slate-200">
+            <p className="mt-3 text-slate-200 ">
               Trusted payroll and HR Services for companies worldwide
             </p>
 
@@ -274,14 +285,12 @@ const page = () => {
         </section>
 
         {/* CTA banner (uses site colors - blue -> indigo) */}
-        <section className="py-16 bg-linear-to-br from-blue-600 to-indigo-700 dark:from-slate-800 dark:to-slate-900 text-white transition-colors">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="py-16 dark:bg-stone-950/90 bg-black/90 shadow-2xl shadow-blue-50 text-white transition-colors">
+          <div className=" max-w-7xl   mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="md:w-1/2">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold">
-                  EMPLOYEE MANAGEMENT SYSTEM
-                  <br />
-                  (EMS)
+              <div data-aos="fade-right" className="md:w-1/2">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">
+                  EMPLOYEE MANAGEMENT SYSTEM (EMS)
                 </h3>
 
                 <p className="mt-4 text-slate-100/90 dark:text-slate-200 max-w-xl">
@@ -293,7 +302,10 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="md:w-1/2 flex justify-center md:justify-end">
+              <div
+                data-aos="fade-left"
+                className="md:w-1/2 flex justify-center md:justify-end"
+              >
                 <div className="w-80">
                   <svg
                     viewBox="0 0 600 400"
@@ -419,7 +431,7 @@ const page = () => {
         </section>
 
         {/* Restyled Services section — split layout with mock device and floating cards */}
-        <section className="py-16 bg-linear-to-br from-blue-600 to-indigo-700 dark:from-slate-800 dark:to-slate-900 transition-colors text-white">
+        <section className="py-16 dark:bg-stone-950/90 bg-black/90 shadow-2xl shadow-blue-50 transition-colors text-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               {/* left: lively mock device with floating badges */}
@@ -475,10 +487,14 @@ const page = () => {
                       key={i}
                       data-aos="fade-up"
                       data-aos-delay={i * 100}
-                      className={`p-4 rounded-2xl bg-white/6 dark:bg-white/5 border border-transparent ${f.cardHover} shadow-md transition transform hover:-translate-y-1  `}
+                      className={`p-4 rounded-2xl bg-white/6 dark:bg-white/5 border border-transparent  hover:border-yellow-400  shadow-md transition transform hover:-translate-y-1  `}
                     >
                       <div className="flex items-start gap-4">
-                        <div className={f.iconClasses}>{f.abbrev}</div>
+                        <div
+                          className={`w-12 h-12 rounded-lg bg-linear-to-br from-yellow-400 to-orange-400 flex items-center justify-center text-slate-900 font-semibold `}
+                        >
+                          {f.abbrev}
+                        </div>
                         <div>
                           <div className="font-semibold dark:text-white">
                             {f.title}
@@ -495,7 +511,7 @@ const page = () => {
         </section>
 
         {/* Redesigned stats / counters: dark band, glass cards, icons, staggered animations */}
-        <section className="py-20 bg-linear-to-br from-blue-600 to-indigo-700 dark:from-slate-800 dark:to-slate-900 text-white transition-colors">
+        <section className="py-20 dark:bg-stone-950/90 bg-black/90 shadow-2xl shadow-blue-50  text-white transition-colors">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h3 className="text-3xl font-bold text-yellow-400">
               WHY CHOOSE ENKONIX SOFTWARE SERVICES PVT. LTD?
@@ -511,11 +527,11 @@ const page = () => {
                   key={s.key}
                   data-aos="fade-up"
                   data-aos-delay={i * 120}
-                  className="rounded-2xl p-8 bg-white/5 dark:bg-white/5 border border-transparent hover:border-cyan-400/20 hover:shadow-2xl transition-shadow duration-300 text-center"
+                  className="rounded-2xl p-8 bg-white/5 dark:bg-white/5 border border-transparent hover:border-amber-300 hover:shadow-2xl transition-shadow duration-300 text-center     transform"
                 >
                   <div className="flex items-center justify-center">
                     {/* simple icon per card */}
-                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-cyan-400 to-indigo-300 flex items-center justify-center shadow-md">
+                    <div className="w-12 h-12 rounded-full bg-amber-300 flex items-center justify-center shadow-md">
                       {s.key === "projects" && (
                         <svg
                           width="20"
@@ -647,7 +663,7 @@ const page = () => {
         </section>
 
         {/* Client testimonials - uses theme colors and dark-mode */}
-        <section className="py-16 bg-linear-to-br from-blue-600 to-indigo-700 dark:from-slate-800 dark:to-slate-900  text-white transition-colors">
+        <section className="py-16 dark:bg-stone-950/90 bg-black/90 shadow-2xl shadow-blue-50   text-white transition-colors">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h3 className="text-3xl font-extrabold text-yellow-400">
               What Our Clients Say
