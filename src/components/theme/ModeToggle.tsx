@@ -1,6 +1,6 @@
 "use client";
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/components/theme/ThemeProvider";
+import { Moon, Sun } from "lucide-react";
 import React from "react";
 
 export function ModeToggle() {

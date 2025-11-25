@@ -1,6 +1,5 @@
-import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 
 const Footer: React.FC = () => {
   return (
@@ -25,36 +24,38 @@ const Footer: React.FC = () => {
 
             <div className="mt-4 flex items-center gap-3">
               <a
-                href="mailto:hello@enkonix.com"
+                href="mailto:info@enkonix.in"
                 className="text-sm text-slate-200/90 hover:text-white"
               >
-                hello@enkonix.com
+                info@enkonix.in
               </a>
             </div>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-3 text-slate-100">Company</h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              <li>
-                <a href="#about" className="hover:text-white">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#careers" className="hover:text-white">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-white">
-                  Contact
-                </a>
-              </li>
-            </ul>
+          <div className=" col-span-2">
+            <div className="flex justify-center flex-col items-center">
+              <h4 className="font-semibold mb-3 text-slate-100">Company</h4>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li>
+                  <a href="#about" className="hover:text-white">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#services" className="hover:text-white">
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="hover:text-white">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-3 text-slate-100">Services</h4>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
@@ -73,7 +74,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="font-semibold mb-3 text-slate-100">Follow us</h4>
@@ -204,21 +205,11 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-white/6 pt-6 text-sm text-slate-400 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <div>
+        <div className="mt-8 border-t border-white/6 pt-6 text-sm text-slate-400     gap-3">
+          <div className="text-center  ">
             © {new Date().getFullYear()} Enkonix Software Services Pvt. Ltd.
           </div>
-          <div className="flex items-center gap-4">
-            <a href="#privacy" className="hover:text-white">
-              Privacy
-            </a>
-            <a href="#terms" className="hover:text-white">
-              Terms
-            </a>
-            <a href="#sitemap" className="hover:text-white">
-              Sitemap
-            </a>
-          </div>
+           
         </div>
       </div>
     </footer>

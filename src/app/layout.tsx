@@ -1,7 +1,7 @@
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import "aos/dist/aos.css";
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import "aos/dist/aos.css";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Enkonix Software Services Private Limited",

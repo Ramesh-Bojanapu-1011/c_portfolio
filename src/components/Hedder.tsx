@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import React, { useState } from "react";
 import { ModeToggle } from "./theme/ModeToggle";
 
 const Hedder: React.FC = () => {
@@ -58,12 +58,12 @@ const Hedder: React.FC = () => {
             className="hidden md:flex md:items-center md:gap-6"
             aria-label="Main navigation"
           >
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/services">Services</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#about">About</NavLink>
+            <NavLink href="#services">Services</NavLink>
+            <NavLink href="#contact">Contact</NavLink>
             <Link
-              href="/contact"
+              href="#contact"
               className="ml-2 inline-flex items-center gap-2 rounded-full bg-linear-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 text-sm font-semibold shadow-md hover:scale-105 transform transition"
             >
               Get in touch
@@ -111,13 +111,13 @@ const Hedder: React.FC = () => {
       {open && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-slate-900/80 backdrop-blur-md">
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/services">Services</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#about">About</NavLink>
+            <NavLink href="#services">Services</NavLink>
+            <NavLink href="#contact">Contact</NavLink>
             <div className="flex  ">
               <Link
-                href="/contact"
+                href="#contact"
                 className="block mt-2 rounded-full bg-linear-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 text-center font-semibold shadow-md"
               >
                 Get in touch

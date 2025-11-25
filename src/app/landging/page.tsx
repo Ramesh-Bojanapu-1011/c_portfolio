@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import AOS from "aos";
-import Hedder from "@/components/Hedder";
-import Marquee from "react-fast-marquee";
 import Footer from "@/components/Footer";
+import Hedder from "@/components/Hedder";
+import AOS from "aos";
+import { MailIcon, MapPinIcon, PhoneCallIcon } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import Marquee from "react-fast-marquee";
 
 // Small counter that animates from 0 -> end when scrolled into view
 const Counter: React.FC<{
@@ -37,7 +38,7 @@ const Counter: React.FC<{
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     obs.observe(node);
@@ -138,13 +139,40 @@ const page = () => {
     },
   ];
 
+  const contacts = [
+    {
+      key: "email",
+      title: "Email",
+      value: "hello@enkonix.com",
+      delay: 80,
+      bg: "bg-amber-300",
+    },
+    {
+      key: "phone",
+      title: "Phone",
+      value: "+91 98765 43210",
+      delay: 160,
+      bg: "bg-cyan-400",
+    },
+    {
+      key: "visit",
+      title: "Visit",
+      value: "123 Tech Park, Hyderabad, India",
+      delay: 240,
+      bg: "bg-green-300",
+    },
+  ];
+
   return (
     <>
       <Hedder />
 
       <main className=" caret-transparent max-w-svw overflow-hidden">
         {/* Video hero section: place a video file at public/hero.mp4. poster falls back to /hero.svg */}
-        <section className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
+        <section
+          id="home"
+          className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden"
+        >
           <video
             className="absolute inset-0 w-full h-full object-cover"
             src="/hero.mp4"
@@ -184,7 +212,10 @@ const page = () => {
         </section>
 
         {/* Mission / Vision / Values - glass cards using theme colors */}
-        <section className="py-16 dark:bg-stone-950/90 bg-black/90 shadow-2xl shadow-blue-50 transition-colors text-white">
+        <section
+          id="about"
+          className="py-16 dark:bg-stone-950/90 bg-black/90 shadow-2xl shadow-blue-50 transition-colors text-white"
+        >
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h3 className="text-3xl font-extrabold text-yellow-400">
               Mission, Vision & Values
@@ -228,7 +259,7 @@ const page = () => {
                           <img
                             src={`/${m.icon}`}
                             alt={m.title}
-                            className="w-7 h-7 object-contain"
+                            className="size-10 object-contain "
                           />
                         </div>
                       </div>
@@ -241,7 +272,10 @@ const page = () => {
         </section>
 
         {/* Trusted partners marquee */}
-        <section className="py-16 dark:bg-stone-950/90 bg-black/90  shadow-2xl shadow-blue-50 transition-colors">
+        <section
+          id="services"
+          className="py-16 dark:bg-stone-950/90 bg-black/90  shadow-2xl shadow-blue-50 transition-colors"
+        >
           <div className="  mx-auto px-6 text-center">
             <h3 className="text-3xl font-bold text-yellow-400 dark:text-white">
               Trusted payroll and HR Services
@@ -752,6 +786,86 @@ const page = () => {
                   </figcaption>
                 </figure>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact section (no form) */}
+        <section
+          id="contact"
+          className="py-16 dark:bg-stone-950/90 bg-black/90 shadow-2xl shadow-blue-50 text-white transition-colors"
+        >
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h3 className="text-3xl font-extrabold text-yellow-400">Contact</h3>
+            <p className="mt-3 text-slate-300 max-w-3xl mx-auto">
+              Want to discuss a project or ask a question? Reach out — we’re
+              responsive and ready to help.
+            </p>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {contacts.map((c) => (
+                <div
+                  key={c.key}
+                  data-aos="fade-up"
+                  data-aos-delay={c.delay}
+                  className="rounded-2xl p-6 bg-linear-to-bl from-white/5 to-white/3 dark:from-white/6 dark:to-white/4 border border-transparent hover:border-cyan-400/25 hover:shadow-2xl transition transform hover:-translate-y-1 backdrop-blur-md text-left"
+                >
+                  <div className="flex items-start gap-4">
+                    <div
+                      className={`w-12 h-12 rounded-lg bg-amber-300 flex items-center justify-center text-slate-900 font-semibold shadow-md`}
+                    >
+                      {c.key === "email" && (
+                        <MailIcon
+                          className="w-6 h-6 text-slate-900"
+                          aria-hidden
+                        />
+                      )}
+
+                      {c.key === "phone" && (
+                        <PhoneCallIcon
+                          className="w-6 h-6 text-slate-900"
+                          aria-hidden
+                        />
+                      )}
+
+                      {c.key === "visit" && (
+                        <MapPinIcon
+                          className="w-6 h-6 text-slate-900"
+                          aria-hidden
+                        />
+                      )}
+                    </div>
+
+                    <div>
+                      <div className="font-semibold text-white">{c.title}</div>
+                      <div className="text-sm text-slate-300 mt-1">
+                        {c.key === "email" ? (
+                          <a href={`mailto:${c.value}`} className="underline">
+                            {c.value}
+                          </a>
+                        ) : (
+                          c.value
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 text-sm text-slate-400">
+              <div>Office hours: Mon — Fri, 9:30 AM — 6:30 PM IST</div>
+              <div className="mt-2">
+                Or message us on{" "}
+                <a
+                  href="https://www.linkedin.com/company/enkonix-software/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </section>
