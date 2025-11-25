@@ -294,23 +294,32 @@ const page = () => {
                 className="py-6"
               >
                 {[
-                  "Client A",
-                  "Client B",
-                  "Client C",
-                  "Client D",
-                  "Client E",
-                  "Client F",
+                  { name: "Tas", img: "tas_service.png" },
+                  {
+                    name: "Task Management",
+                    img: "task_manaement_service.png",
+                  },
+                  {
+                    name: "Performance Service",
+                    img: "performance_service.png",
+                  },
+                  { name: "Pay Slip Service", img: "pay_slip_service.png" },
+                  {
+                    name: "Employee Management System",
+                    img: "ems_service.png",
+                  },
                 ].map((name, i) => (
                   <div
                     key={i}
                     className="flex items-center justify-center w-56 mx-8"
                   >
-                    <div className="w-40 h-20 flex items-center justify-center bg-white dark:bg-slate-800 rounded-md shadow-sm">
+                    <div className="flex flex-col size-46   items-center justify-center bg-white dark:bg-slate-800 rounded-md shadow-sm p-2">
                       <img
-                        src="/logo.svg"
-                        alt={`${name} logo`}
+                        src={`/${name.img}`}
+                        alt={`${name.name} logo`}
                         className="w-32 h-auto dark:invert"
                       />
+                      {name.name}
                     </div>
                   </div>
                 ))}
@@ -341,125 +350,11 @@ const page = () => {
                 data-aos="fade-left"
                 className="md:w-1/2 flex justify-center md:justify-end"
               >
-                <div className="w-80">
-                  <svg
-                    viewBox="0 0 600 400"
-                    width="100%"
-                    height="100%"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    aria-label="Illustration"
-                    className="filter dark:brightness-90"
-                  >
-                    <rect
-                      x="0"
-                      y="0"
-                      width="600"
-                      height="400"
-                      rx="16"
-                      fill="rgba(255,255,255,0.04)"
-                    />
-                    <rect
-                      x="36"
-                      y="44"
-                      width="340"
-                      height="240"
-                      rx="8"
-                      fill="#ffffff"
-                      opacity="0.06"
-                    />
-                    <rect
-                      x="380"
-                      y="80"
-                      width="180"
-                      height="280"
-                      rx="8"
-                      fill="#fff"
-                      opacity="0.04"
-                    />
-
-                    {/* <!-- device screen --> */}
-                    <rect
-                      x="52"
-                      y="60"
-                      width="308"
-                      height="196"
-                      rx="6"
-                      fill="#fff"
-                    />
-                    <rect
-                      x="64"
-                      y="76"
-                      width="284"
-                      height="28"
-                      rx="4"
-                      fill="#0ea5a4"
-                    />
-                    <rect
-                      x="64"
-                      y="112"
-                      width="220"
-                      height="16"
-                      rx="4"
-                      fill="#1e3a8a"
-                    />
-                    <rect
-                      x="64"
-                      y="136"
-                      width="240"
-                      height="12"
-                      rx="4"
-                      fill="#1e40af"
-                    />
-                    <rect
-                      x="64"
-                      y="156"
-                      width="200"
-                      height="12"
-                      rx="4"
-                      fill="#0ea5a4"
-                    />
-
-                    {/* <!-- phone mock --> */}
-                    <rect
-                      x="396"
-                      y="96"
-                      width="136"
-                      height="232"
-                      rx="12"
-                      fill="white"
-                      opacity="0.95"
-                    />
-                    <rect
-                      x="410"
-                      y="112"
-                      width="104"
-                      height="28"
-                      rx="6"
-                      fill="#1e3a8a"
-                    />
-                    <rect
-                      x="410"
-                      y="150"
-                      width="88"
-                      height="12"
-                      rx="6"
-                      fill="#0ea5a4"
-                    />
-                    <rect
-                      x="410"
-                      y="172"
-                      width="104"
-                      height="8"
-                      rx="4"
-                      fill="#1e40af"
-                    />
-
-                    {/* <!-- accent circles --> */}
-                    <circle cx="520" cy="64" r="18" fill="#ffb020" />
-                    <circle cx="540" cy="320" r="12" fill="#06b6d4" />
-                  </svg>
-                </div>
+                <img
+                  src="/ems-mockup.png"
+                  alt="Employee Management System Mockup"
+                  className="size-full object-contain"
+                />
               </div>
             </div>
           </div>
@@ -476,21 +371,11 @@ const page = () => {
               >
                 <div className="relative w-full max-w-sm">
                   <div className="rounded-2xl p-6 bg-linear-to-br from-cyan-600 to-indigo-700 dark:from-indigo-800 dark:to-slate-900 text-white shadow-2xl transform -rotate-3">
-                    <div className="h-56 rounded-lg bg-white/6 dark:bg-white/8 p-4 flex flex-col gap-3">
-                      <div className="h-4 w-2/3 bg-linear-to-r from-yellow-300 to-orange-400 rounded" />
-                      <div className="flex gap-3 items-center">
-                        <div className="w-14 h-14 rounded-lg bg-linear-to-br from-cyan-300 to-indigo-300" />
-                        <div className="flex-1">
-                          <div className="h-3 bg-white/30 rounded w-3/4" />
-                          <div className="h-3 bg-white/20 rounded w-1/2 mt-2" />
-                        </div>
-                      </div>
-                      <div className="mt-auto grid grid-cols-3 gap-2">
-                        <div className="h-8 bg-linear-to-r from-yellow-400 to-orange-400 rounded" />
-                        <div className="h-8 bg-linear-to-r from-green-300 to-cyan-300 rounded" />
-                        <div className="h-8 bg-linear-to-r from-cyan-400 to-indigo-400 rounded" />
-                      </div>
-                    </div>
+                    <img
+                      src="/core.png"
+                      alt=""
+                      className="size-full object-center"
+                    />
                   </div>
 
                   {/* floating badges */}
