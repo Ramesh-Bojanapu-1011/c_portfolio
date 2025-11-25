@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className=" col-span-2">
-            <div className="flex justify-center flex-col items-center">
+            <div className="flex justify-center flex-col md:items-center">
               <h4 className="font-semibold mb-3 text-slate-100">Company</h4>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li>
@@ -54,27 +54,6 @@ const Footer: React.FC = () => {
               </ul>
             </div>
           </div>
-
-          {/* <div>
-            <h4 className="font-semibold mb-3 text-slate-100">Services</h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              <li>
-                <a href="#pe" className="hover:text-white">
-                  Product Engineering
-                </a>
-              </li>
-              <li>
-                <a href="#devops" className="hover:text-white">
-                  Cloud & DevOps
-                </a>
-              </li>
-              <li>
-                <a href="#ux" className="hover:text-white">
-                  UX & Design
-                </a>
-              </li>
-            </ul>
-          </div> */}
 
           <div>
             <h4 className="font-semibold mb-3 text-slate-100">Follow us</h4>
@@ -209,7 +188,6 @@ const Footer: React.FC = () => {
           <div className="text-center  ">
             © {new Date().getFullYear()} Enkonix Software Services Pvt. Ltd.
           </div>
-           
         </div>
       </div>
     </footer>

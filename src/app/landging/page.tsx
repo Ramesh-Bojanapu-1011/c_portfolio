@@ -251,7 +251,9 @@ const page = () => {
 
                     <div
                       className={`absolute  ${
-                        i % 2 != 0 ? "  left-[48%] " : " right-[48%]"
+                        i % 2 != 0
+                          ? " top-0  md:left-[48%] "
+                          : " top-0  md:right-[48%]"
                       }   `}
                     >
                       <div className="flex items-center justify-center w-full">
