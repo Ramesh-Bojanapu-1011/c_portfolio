@@ -4,14 +4,14 @@ import "aos/dist/aos.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Chat app",
-  description: "Chat app",
+  title: "Enkonix Software Services Private Limited",
+  description:
+    "Enkonix Software Services Pvt. Ltd is a global software development company providing innovative solutions and services to businesses worldwide.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
     shortcut: "/logo.png",
   },
-  // keywords: "chat app,chat application,chat,chat app,chat application,chat",
   authors: [{ name: "Akash" }],
 };
 
