@@ -165,7 +165,7 @@ const page = () => {
 
   return (
     <>
-      <main className=" caret-transparent  ">
+      <main className="caret-transparent">
         <Hedder />
         {/* Video hero section: place a video file at public/hero.mp4. poster falls back to /hero.svg */}
         <section

@@ -12,12 +12,14 @@ const Hedder: React.FC = () => {
     href,
     children,
   }) => (
-    <Link
-      href={href}
-      className={`px-2 py-1 rounded-md text-sm font-medium transition-colors  `}
-    >
-      {children}
-    </Link>
+    <div onClick={() => setOpen((s) => !s)}>
+      <Link
+        href={href}
+        className={`px-2 py-1 rounded-md text-sm font-medium transition-colors  `}
+      >
+        {children}
+      </Link>
+    </div>
   );
 
   return (
